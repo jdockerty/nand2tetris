@@ -1,0 +1,12 @@
+We can get an `AND` gate by negating the "not" portion of the `NAND`.
+
+```
+CHIP And {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    Nand(a=a, b=b, out=next);
+    Not(in=next, out=out);
+}
+```

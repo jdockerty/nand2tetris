@@ -1,0 +1,11 @@
+Joining the input with a `NAND` leaves only the `NOT` portion, giving us the gate.
+
+```
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    Nand(a=in, b=in, out=out);
+}
+```
