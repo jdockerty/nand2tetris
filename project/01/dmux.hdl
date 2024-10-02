@@ -1,0 +1,15 @@
+-- This comes from the truth table where the `sel` defines whether or not A/B is
+-- the given output.
+--
+-- Simplifying this to in, sel and a gives (A and NOT B)
+-- in, sel and b gives (A and B)
+
+CHIP DMux {
+    IN in, sel;
+    OUT a, b;
+
+    PARTS:
+    Not(in=sel, out=notsel);
+    And(a=in, b=notsel, out=a);
+    And(a=in, b=sel, out=b);
+}
